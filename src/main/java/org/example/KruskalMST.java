@@ -1,114 +1,57 @@
-import java.util.Arrays;
+
+package org.example;
+
+import java.util.*;
 
 public class KruskalMST {
-    private static final double FLOATING_POINT_EPSILON = 1.0E-12;
 
-    private double weight;                        // weight of MST
-    private Queue<Edge> mst = new Queue<Edge>();  // edges in MST
-    public KruskalMST(EdgeWeightedGraph G) {
-
-        // create array of edges, sorted by weight
-        Edge[] edges = new Edge[G.E()];
-        int t = 0;
-        for (Edge e: G.edges()) {
-            edges[t++] = e;
-        }
-        Arrays.sort(edges);
-
-        // run greedy algorithm
-        UF uf = new UF(G.V());
-        for (int i = 0; i < G.E() && mst.size() < G.V() - 1; i++) {
-            Edge e = edges[i];
-            int v = e.either();
-            int w = e.other(v);
-
-            // v-w does not create a cycle
-            if (uf.find(v) != uf.find(w)) {
-                uf.union(v, w);     // merge v and w components
-                mst.enqueue(e);     // add edge e to mst
-                weight += e.weight();
-            }
-        }
-
-        // check optimality conditions
-        assert check(G);
+    public static class Result {
+        public final List<Graph.Edge> mstEdges;
+        public final Double totalCost;
+        public final String error;
+        public Result(List<Graph.Edge> e, Double c, String err) { mstEdges = e; totalCost = c; error = err; }
+        public boolean ok() { return error == null; }
     }
 
-    public Iterable<Edge> edges() {
-        return mst;
-    }
+    private final MetricsIO.OperationCounter counter;
 
-    public double weight() {
-        return weight;
-    }
+    public KruskalMST(MetricsIO.OperationCounter counter) { this.counter = counter; }
 
-    // check optimality conditions (takes time proportional to E V lg* V)
-    private boolean check(EdgeWeightedGraph G) {
+    public Result compute(Graph g) {
+        List<Graph.Edge> edges = new ArrayList<>(g.getEdges());
+        edges.sort((a,b)->{ counter.cmp(); return Double.compare(a.w, b.w); });
 
-        // check total weight
-        double total = 0.0;
-        for (Edge e : edges()) {
-            total += e.weight();
-        }
-        if (Math.abs(total - weight()) > FLOATING_POINT_EPSILON) {
-            System.err.printf("Weight of edges does not equal weight(): %f vs. %f\n", total, weight());
-            return false;
-        }
+        Map<String,Integer> idx = new LinkedHashMap<>();
+        int id = 0; for (String v : g.getVertices()) idx.put(v, id++);
+        UnionFind uf = new UnionFind(g.getVertices().size(), counter);
 
-        // check that it is acyclic
-        UF uf = new UF(G.V());
-        for (Edge e : edges()) {
-            int v = e.either(), w = e.other(v);
-            if (uf.find(v) == uf.find(w)) {
-                System.err.println("Not a forest");
-                return false;
-            }
-            uf.union(v, w);
-        }
+        List<Graph.Edge> mst = new ArrayList<>();
+        double cost = 0.0;
 
-        // check that it is a spanning forest
-        for (Edge e : G.edges()) {
-            int v = e.either(), w = e.other(v);
-            if (uf.find(v) != uf.find(w)) {
-                System.err.println("Not a spanning forest");
-                return false;
+        for (var e : edges) {
+            int u = idx.get(e.u), v = idx.get(e.v);
+            if (uf.find(u) != uf.find(v)) {
+                uf.union(u, v);
+                mst.add(e);
+                cost += e.w;
+                if (mst.size() == g.getVertices().size()-1) break;
             }
         }
-
-        // check that it is a minimal spanning forest (cut optimality conditions)
-        for (Edge e : edges()) {
-
-            // all edges in MST except e
-            uf = new UF(G.V());
-            for (Edge f : mst) {
-                int x = f.either(), y = f.other(x);
-                if (f != e) uf.union(x, y);
-            }
-
-            // check that e is min weight edge in crossing cut
-            for (Edge f : G.edges()) {
-                int x = f.either(), y = f.other(x);
-                if (uf.find(x) != uf.find(y)) {
-                    if (f.weight() < e.weight()) {
-                        System.err.println("Edge " + f + " violates cut optimality conditions");
-                        return false;
-                    }
-                }
-            }
-
-        }
-
-        return true;
+        if (mst.size() != g.getVertices().size()-1) return new Result(List.of(), null, "Graph is disconnected (no MST).");
+        return new Result(mst, cost, null);
     }
 
-    public static void main(String[] args) {
-        In in = new In(args[0]);
-        EdgeWeightedGraph G = new EdgeWeightedGraph(in);
-        KruskalMST mst = new KruskalMST(G);
-        for (Edge e : mst.edges()) {
-            StdOut.println(e);
+    // Inner Union-Find as requested
+    static class UnionFind {
+        final int[] p, r;
+        final MetricsIO.OperationCounter c;
+        UnionFind(int n, MetricsIO.OperationCounter c){ this.c = c; p = new int[n]; r = new int[n]; for(int i=0;i<n;i++){p[i]=i;r[i]=0;}}
+        int find(int x){ c.ufFind(); if(p[x]!=x) p[x]=find(p[x]); return p[x]; }
+        void union(int a,int b){ c.ufUnion(); int ra=find(a), rb=find(b);
+            if(ra==rb) return;
+            if(r[ra]<r[rb]) p[ra]=rb;
+            else if(r[ra]>r[rb]) p[rb]=ra;
+            else { p[rb]=ra; r[ra]++; }
         }
-        StdOut.printf("%.5f\n", mst.weight());
     }
-
 }
