@@ -1,0 +1,283 @@
+{
+  "graphs": [
+    {
+      "id": 1,
+      "type": "small",
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 2
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 4
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "small",
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 3
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 4
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 5
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "weight": 6
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 4
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "small",
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 2
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "weight": 4
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 4
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 5
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "small",
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 2
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 4
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "weight": 5
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "weight": 6
+        },
+        {
+          "from": "F",
+          "to": "A",
+          "weight": 2
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "weight": 2
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "weight": 2
+        },
+        {
+          "from": "C",
+          "to": "F",
+          "weight": 2
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 3
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "weight": 3
+        },
+        {
+          "from": "D",
+          "to": "F",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "small",
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 1
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 2
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "small",
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 4
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 2
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 5
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 7
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "weight": 8
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "weight": 6
+        }
+      ]
+    }
+  ]
+}
