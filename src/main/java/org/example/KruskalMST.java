@@ -13,7 +13,6 @@ public class KruskalMST {
     }
 
     private final MetricsIO.OperationCounter counter;
-
     public KruskalMST(MetricsIO.OperationCounter counter) { this.counter = counter; }
 
     public Result compute(Graph g) {
@@ -40,7 +39,7 @@ public class KruskalMST {
         return new Result(mst, cost, null);
     }
 
-    // Inner Union-Find as requested
+    // Встроенный Union-Find
     static class UnionFind {
         final int[] p, r;
         final MetricsIO.OperationCounter c;

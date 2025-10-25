@@ -34,10 +34,8 @@ public class Graph {
 
     public static Graph fromInput(JsonInput.InputGraph in) {
         Graph g = new Graph();
-        if (in.edges != null) {
-            for (var e : in.edges) g.addEdge(e.from, e.to, e.weight);
-        }
         if (in.vertices != null) for (String v : in.vertices) g.vertices.add(v);
+        if (in.edges != null) for (JsonInput.EdgeDto e : in.edges) g.addEdge(e.from, e.to, e.weight);
         return g;
     }
 }

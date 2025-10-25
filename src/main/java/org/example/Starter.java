@@ -1,12 +1,7 @@
 package org.example;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 public class Starter {
 
@@ -32,8 +27,7 @@ public class Starter {
             PrimMST.Result pr = prim.compute(graph);
             long t1 = System.nanoTime();
             entry.prim.execution_time_ms = (t1 - t0) / 1_000_000.0;
-            entry.prim.operations_count = primCounter.total();
-
+            entry.prim.operations_count  = primCounter.total();
             if (pr.ok()) {
                 entry.prim.mst_edges = toEdgeMaps(pr.mstEdges);
                 entry.prim.total_cost = pr.totalCost;
@@ -48,8 +42,7 @@ public class Starter {
             KruskalMST.Result rr = kr.compute(graph);
             long k1 = System.nanoTime();
             entry.kruskal.execution_time_ms = (k1 - k0) / 1_000_000.0;
-            entry.kruskal.operations_count = krCounter.total();
-
+            entry.kruskal.operations_count  = krCounter.total();
             if (rr.ok()) {
                 entry.kruskal.mst_edges = toEdgeMaps(rr.mstEdges);
                 entry.kruskal.total_cost = rr.totalCost;

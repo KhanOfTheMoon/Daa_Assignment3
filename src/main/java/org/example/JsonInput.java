@@ -7,12 +7,13 @@ import java.util.*;
 public class JsonInput {
     public static class InputData { public List<InputGraph> graphs = new ArrayList<>(); }
     public static class InputGraph {
-        public int graph_id;                 // заполним из id или graph_id
-        public List<String> vertices;        // заполним из nodes или vertices
+        public int graph_id;
+        public List<String> vertices;
         public List<EdgeDto> edges;
     }
     public static class EdgeDto { public String from, to; public double weight; }
 
+    // Понимает оба формата: {id,nodes,edges} и {graph_id,vertices,edges}
     public static InputData read(String path) throws Exception {
         ObjectMapper m = new ObjectMapper();
         JsonNode root = m.readTree(new File(path));
@@ -27,7 +28,7 @@ public class JsonInput {
             for (JsonNode e : g.get("edges")) {
                 EdgeDto ed = new EdgeDto();
                 ed.from = e.get("from").asText();
-                ed.to = e.get("to").asText();
+                ed.to   = e.get("to").asText();
                 ed.weight = e.get("weight").asDouble();
                 ig.edges.add(ed);
             }

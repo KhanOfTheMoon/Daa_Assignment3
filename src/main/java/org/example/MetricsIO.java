@@ -8,13 +8,10 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class MetricsIO {
 
-    // Unified output structures + writer
     public static class OutputEntry {
         public int graph_id;
         public InputStats input_stats = new InputStats();
@@ -28,7 +25,7 @@ public class MetricsIO {
     }
 
     public static class AlgoResult {
-        public List<java.util.Map<String,Object>> mst_edges = new ArrayList<>();
+        public List<Map<String,Object>> mst_edges = new ArrayList<>();
         public Double total_cost;
         public long operations_count;
         public double execution_time_ms;
@@ -71,18 +68,24 @@ public class MetricsIO {
         Files.writeString(Path.of(path), sb.toString());
     }
 
-    // Simple, shared operation counter (can be considered an "I/O metric" too)
+    // Счётчик операций
     public static class OperationCounter {
         private long comparisons = 0;
         private long heapOps = 0;
         private long ufFind = 0;
         private long ufUnion = 0;
 
-        public void cmp() { comparisons++; }
-        public void heap() { heapOps++; }
-        public void ufFind() { ufFind++; }
-        public void ufUnion() { ufUnion++; }
+        public void cmp()   { comparisons++; }
+        public void heap()  { heapOps++; }
+        public void ufFind(){ ufFind++; }
+        public void ufUnion(){ ufUnion++; }
 
         public long total() { return comparisons + heapOps + ufFind + ufUnion; }
+
+        // геттеры для тестов
+        public long getComparisons(){ return comparisons; }
+        public long getHeapOps(){ return heapOps; }
+        public long getUfFind(){ return ufFind; }
+        public long getUfUnion(){ return ufUnion; }
     }
 }
