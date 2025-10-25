@@ -35,11 +35,15 @@ public class MetricsIO {
     public static void writeJson(String path, List<OutputEntry> results) throws Exception {
         ObjectMapper m = new ObjectMapper();
         ObjectWriter w = m.writer(new DefaultPrettyPrinter()
-                .withObjectIndenter(new DefaultPrettyPrinter.FixedSpaceIndenter()));
-        w = w.withFeatures(JsonGenerator.Feature.WRITE_BIGDECIMAL_AS_PLAIN);
-        var wrap = new Object(){ public List<OutputEntry> results = results; };
+                        .withObjectIndenter(new DefaultPrettyPrinter.FixedSpaceIndenter()))
+                .withFeatures(JsonGenerator.Feature.WRITE_BIGDECIMAL_AS_PLAIN);
+
+        Map<String, Object> wrap = new LinkedHashMap<>();
+        wrap.put("results", results);
+
         w.writeValue(new File(path), wrap);
     }
+
 
     public static void writeCsv(String path, List<OutputEntry> results) throws Exception {
         StringBuilder sb = new StringBuilder();
