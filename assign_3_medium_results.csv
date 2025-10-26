@@ -1,0 +1,6 @@
+graph_id,vertices,edges,prim_total_cost,kruskal_total_cost,prim_ms,kruskal_ms,prim_ops,kruskal_ops,equal_cost,error
+101,10,17,33.0,33.0,0.069,0.043,71,106,true,""
+102,12,22,40.0,40.0,0.067,0.055,106,159,true,""
+103,15,40,39.0,39.0,0.085,0.046,207,202,true,""
+104,11,4,,,0.015,0.017,4,28,false,"prim:Graph is disconnected (no MST). | kruskal:Graph is disconnected (no MST)."
+105,14,46,37.0,37.0,0.080,0.048,248,225,true,""

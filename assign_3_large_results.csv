@@ -1,0 +1,5 @@
+graph_id,vertices,edges,prim_total_cost,kruskal_total_cost,prim_ms,kruskal_ms,prim_ops,kruskal_ops,equal_cost,error
+201,22,42,93.0,93.0,2.219,1.637,252,286,true,""
+202,26,25,143.0,143.0,0.063,0.062,50,245,true,""
+203,24,67,65.0,65.0,0.154,0.094,383,371,true,""
+204,28,103,77.0,77.0,0.217,0.130,631,490,true,""
