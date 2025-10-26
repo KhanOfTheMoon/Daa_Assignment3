@@ -1,5 +1,5 @@
 dataset,graphs_connected,avg_prim_ms,avg_kruskal_ms,avg_prim_ops,avg_kruskal_ops,kruskal_faster,all_equal_cost
-large,4,0.5269,0.3421,329.0,348.0,true,true
-medium,4,0.0601,0.0338,158.0,173.0,true,false
-small,5,0.0190,0.0146,25.2,38.6,true,false
-OVERALL,13,0.1879,0.1213,159.5,175.2,true,false
+assign_3_large,4,0.4200,0.3850,329.0,348.0,true,true
+assign_3_medium,4,0.0725,0.0450,158.0,173.0,true,false
+assign_3_small,5,0.0180,0.0140,25.2,38.6,true,false
+OVERALL,13,0.1585,0.1377,159.5,175.2,true,false

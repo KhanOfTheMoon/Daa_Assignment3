@@ -9,47 +9,45 @@
       "mst_edges" : [ {
         "from" : "A",
         "to" : "B",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "B",
         "to" : "C",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "C",
         "to" : "D",
-        "weight" : 4.0
+        "weight" : 4
       }, {
         "from" : "D",
         "to" : "E",
-        "weight" : 5.0
+        "weight" : 5
       } ],
       "total_cost" : 14.0,
       "operations_count" : 8,
-      "execution_time_ms" : 0.0306,
-      "error" : null
+      "execution_time_ms" : 0.03
     },
     "kruskal" : {
       "mst_edges" : [ {
         "from" : "A",
         "to" : "B",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "B",
         "to" : "C",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "C",
         "to" : "D",
-        "weight" : 4.0
+        "weight" : 4
       }, {
         "from" : "D",
         "to" : "E",
-        "weight" : 5.0
+        "weight" : 5
       } ],
       "total_cost" : 14.0,
       "operations_count" : 29,
-      "execution_time_ms" : 0.023,
-      "error" : null
+      "execution_time_ms" : 0.02
     }
   }, {
     "graph_id" : 2,
@@ -61,47 +59,45 @@
       "mst_edges" : [ {
         "from" : "A",
         "to" : "B",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "A",
         "to" : "C",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "B",
         "to" : "D",
-        "weight" : 4.0
+        "weight" : 4
       }, {
         "from" : "C",
         "to" : "E",
-        "weight" : 5.0
+        "weight" : 5
       } ],
       "total_cost" : 15.0,
       "operations_count" : 24,
-      "execution_time_ms" : 0.0165,
-      "error" : null
+      "execution_time_ms" : 0.02
     },
     "kruskal" : {
       "mst_edges" : [ {
         "from" : "A",
         "to" : "B",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "A",
         "to" : "C",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "B",
         "to" : "D",
-        "weight" : 4.0
+        "weight" : 4
       }, {
         "from" : "C",
         "to" : "E",
-        "weight" : 5.0
+        "weight" : 5
       } ],
       "total_cost" : 15.0,
       "operations_count" : 45,
-      "execution_time_ms" : 0.0124,
-      "error" : null
+      "execution_time_ms" : 0.01
     }
   }, {
     "graph_id" : 3,
@@ -113,39 +109,37 @@
       "mst_edges" : [ {
         "from" : "A",
         "to" : "B",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "A",
         "to" : "C",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "A",
         "to" : "D",
-        "weight" : 4.0
+        "weight" : 4
       } ],
       "total_cost" : 9.0,
       "operations_count" : 19,
-      "execution_time_ms" : 0.0113,
-      "error" : null
+      "execution_time_ms" : 0.01
     },
     "kruskal" : {
       "mst_edges" : [ {
         "from" : "A",
         "to" : "B",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "A",
         "to" : "C",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "A",
         "to" : "D",
-        "weight" : 4.0
+        "weight" : 4
       } ],
       "total_cost" : 9.0,
       "operations_count" : 20,
-      "execution_time_ms" : 0.007,
-      "error" : null
+      "execution_time_ms" : 0.01
     }
   }, {
     "graph_id" : 4,
@@ -157,55 +151,53 @@
       "mst_edges" : [ {
         "from" : "A",
         "to" : "B",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "F",
         "to" : "A",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "B",
         "to" : "E",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "A",
         "to" : "D",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "C",
         "to" : "F",
-        "weight" : 2.0
+        "weight" : 2
       } ],
       "total_cost" : 10.0,
       "operations_count" : 50,
-      "execution_time_ms" : 0.0191,
-      "error" : null
+      "execution_time_ms" : 0.02
     },
     "kruskal" : {
       "mst_edges" : [ {
         "from" : "A",
         "to" : "B",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "F",
         "to" : "A",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "A",
         "to" : "D",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "B",
         "to" : "E",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "C",
         "to" : "F",
-        "weight" : 2.0
+        "weight" : 2
       } ],
       "total_cost" : 10.0,
       "operations_count" : 60,
-      "execution_time_ms" : 0.0157,
-      "error" : null
+      "execution_time_ms" : 0.02
     }
   }, {
     "graph_id" : 5,
@@ -215,16 +207,14 @@
     },
     "prim" : {
       "mst_edges" : [ ],
-      "total_cost" : null,
       "operations_count" : 4,
-      "execution_time_ms" : 0.0097,
+      "execution_time_ms" : 0.01,
       "error" : "Graph is disconnected (no MST)."
     },
     "kruskal" : {
       "mst_edges" : [ ],
-      "total_cost" : null,
       "operations_count" : 21,
-      "execution_time_ms" : 0.0095,
+      "execution_time_ms" : 0.01,
       "error" : "Graph is disconnected (no MST)."
     }
   }, {
@@ -237,47 +227,45 @@
       "mst_edges" : [ {
         "from" : "A",
         "to" : "C",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "B",
         "to" : "C",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "B",
         "to" : "D",
-        "weight" : 5.0
+        "weight" : 5
       }, {
         "from" : "D",
         "to" : "E",
-        "weight" : 6.0
+        "weight" : 6
       } ],
       "total_cost" : 16.0,
       "operations_count" : 25,
-      "execution_time_ms" : 0.0176,
-      "error" : null
+      "execution_time_ms" : 0.01
     },
     "kruskal" : {
       "mst_edges" : [ {
         "from" : "B",
         "to" : "C",
-        "weight" : 2.0
+        "weight" : 2
       }, {
         "from" : "A",
         "to" : "C",
-        "weight" : 3.0
+        "weight" : 3
       }, {
         "from" : "B",
         "to" : "D",
-        "weight" : 5.0
+        "weight" : 5
       }, {
         "from" : "D",
         "to" : "E",
-        "weight" : 6.0
+        "weight" : 6
       } ],
       "total_cost" : 16.0,
       "operations_count" : 39,
-      "execution_time_ms" : 0.0148,
-      "error" : null
+      "execution_time_ms" : 0.01
     }
   } ]
 }
