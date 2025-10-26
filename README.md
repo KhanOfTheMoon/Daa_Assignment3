@@ -2,6 +2,15 @@ Report — Optimization of a City Transportation Network (MST)
 
 1. Summary of input data and per-case results
 
+Dataset summary:
+
+| dataset | graphs_connected | avg_prim_ms | avg_kruskal_ms | avg_prim_ops | avg_kruskal_ops | kruskal_faster | all_equal_cost |
+| ------- | ---------------: | ----------: | -------------: | -----------: | --------------: | -------------: | -------------: |
+| large   |                4 |      0.5269 |         0.3421 |        320.0 |           348.0 |           true |           true |
+| medium  |                4 |      0.0601 |         0.0338 |        158.0 |           173.0 |           true |          false |
+| small   |                5 |      0.0190 |         0.0146 |         25.2 |            38.6 |           true |          false |
+| OVERALL |               13 |      0.1879 |         0.1213 |        159.5 |           175.2 |           true |          false |
+
 Small (4–6 vertices):
 
 | id |  V |  E | Prim cost | Prim ms | Prim ops | Kruskal cost | Kruskal ms | Kruskal ops | note                  |
